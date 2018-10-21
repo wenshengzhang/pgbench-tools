@@ -5,7 +5,8 @@
 #
 
 BASEDIR=`pwd`
-PGBENCHBIN=`which pgbench`
+PGSQLBIN='/opt/pgsql/10/bin'
+PGBENCHBIN="${PGSQLBIN}/pgbench"
 GNUPLOT=`which gnuplot`
 
 # These values are for pgbench 8.4 and later

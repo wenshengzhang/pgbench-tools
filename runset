@@ -8,7 +8,7 @@ if [ -z $PGBENCHBIN ] || [ ! -x $PGBENCHBIN ]; then
   exit
 fi
 
-TESTPSQL="psql -h $TESTHOST -U $TESTUSER -p $TESTPORT -d $TESTDB"
+TESTPSQL="$PGSQLBIN/psql -h $TESTHOST -U $TESTUSER -p $TESTPORT -d $TESTDB"
 
 # See if this database has all the standard pgbench tables in it
 PGCOUNT=`$TESTPSQL -A -t -c "SELECT count(*)  FROM pg_stat_user_tables WHERE relname IN ('pgbench_history','pgbench_tellers','pgbench_accounts','pgbench_branches')"`
